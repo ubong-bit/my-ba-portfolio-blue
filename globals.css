@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 248 250 252; /* #f8fafc */
+    --foreground: 15 23 42;
+    --card: 255 255 255;
+    --muted: 241 245 249;
+    --muted-foreground: 71 85 105;
+    --border: 226 232 240;
+    --primary: 37 99 235; /* #2563EB */
+    --primary-foreground: 255 255 255;
+    --link: 37 99 235;
+  }
+  .dark {
+    --background: 10 15 28;
+    --foreground: 226 232 240;
+    --card: 15 23 42;
+    --muted: 17 24 39;
+    --muted-foreground: 148 163 184;
+    --border: 30 41 59;
+    --primary: 37 99 235;
+    --primary-foreground: 255 255 255;
+    --link: 96 165 250;
+  }
+  html { scroll-behavior: smooth; scroll-padding-top: 5rem; }
+  body { @apply bg-background text-foreground antialiased; font-feature-settings: "cv11", "ss01"; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  :focus-visible { @apply outline-none ring-2 ring-primary ring-offset-2 ring-offset-background; }
+}
